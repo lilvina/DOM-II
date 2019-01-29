@@ -2,6 +2,8 @@
 let navButton = document.querySelectorAll('.nav .nav-link')
 let headerImg = document.querySelector(".intro img")
 let destinationBtn = document.querySelectorAll('.destination .btn')
+let sectionImg = document.querySelector(".content-destination img")
+let adventureContent = document.querySelector(".text-content p")
 navButton.forEach(element => {
   element.addEventListener('mouseover', event => {
     event.target.style.color = "blue"
@@ -17,7 +19,7 @@ navButton.forEach(element => {
 destinationBtn.forEach(element => {
   element.addEventListener('mouseleave', event => {
     event.target.style.backgroundColor = "green"
-    //event.preventDefault()
+    event.preventDefault()
 
     setTimeout(function() {
       event.target.style.backgroundColor = ""
@@ -35,6 +37,17 @@ headerImg.addEventListener('drag', function() {
   headerImg.style.display = "flex"
 })
 
-// window.addEventListener("scroll", event => {
-//
-// })
+sectionImg.style.cursor = "pointer"
+sectionImg.addEventListener('drop', function() {
+  sectionImg.style.display = "none"
+})
+
+window.addEventListener("scroll", event => {
+  if(scrollX < 400) {
+    window.scroll(0, scrollX += 6)
+  }
+})
+
+adventureContent.addEventListener("mousemove", event => {
+  adventureContent.style.marginLeft = "45px"
+})
