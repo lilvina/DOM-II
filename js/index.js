@@ -63,3 +63,15 @@ headingH2.addEventListener("dblclick", event => {
   headingH2.style.color = "pink"
   headingH2.style.fontSize = "80px"
 })
+
+let destinationH2 = document.querySelector(".content-destination h2")
+destinationH2.style.cursor = "pointer"
+window.addEventListener('keyup', event => {
+  let x = event.key
+  destinationH2.textContent = `key went up ${x}`
+})
+
+window.addEventListener('keydown', event => {
+  let y = event.key
+  destinationH2.textContent = `key went down ${y}`
+})
