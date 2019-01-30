@@ -4,6 +4,8 @@ let headerImg = document.querySelector(".intro img")
 let destinationBtn = document.querySelectorAll('.destination .btn')
 let sectionImg = document.querySelector(".content-destination img")
 let adventureContent = document.querySelector(".text-content p")
+let headingH2 = document.querySelector(".logo-heading")
+let footerP = document.querySelector(".footer p")
 navButton.forEach(element => {
   element.addEventListener('mouseover', event => {
     event.target.style.color = "blue"
@@ -48,6 +50,16 @@ window.addEventListener("scroll", event => {
   }
 })
 
+window.addEventListener("wheel", event => {
+  footerP.style.fontSize = "60px"
+})
+
 adventureContent.addEventListener("mousemove", event => {
   adventureContent.style.marginLeft = "45px"
+})
+
+headingH2.style.cursor = "pointer"
+headingH2.addEventListener("dblclick", event => {
+  headingH2.style.color = "pink"
+  headingH2.style.fontSize = "80px"
 })
